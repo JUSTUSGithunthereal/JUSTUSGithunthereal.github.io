@@ -5,40 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Humboldt-Makerspace</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
+    <link rel="icon" type="image/png" href="pinguin_weiss_2k-768x892.png" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
-
-      declineBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'declined');
-        banner.style.display = 'none';
-      });
-
-      themeSelect.addEventListener('change', () => {
-        const value = themeSelect.value;
-        localStorage.setItem('themePreference', value);
-        applyTheme(value);
-      });
-
-
-      const savedTheme = localStorage.getItem('themePreference') || 'system';
-      themeSelect.value = savedTheme;
-      applyTheme(savedTheme);
-    });
-    </script>
-    
-   
     </style>
-    <script>
-      function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('hidden');
-      }
-    </script>
   </head>
-  <link rel="icon" type="image/png" href="pinguin_weiss_2k-768x892.png">
   <body class="bg-white text-gray-900 dark:bg-black dark:text-white scroll-snap-y snap-mandatory overflow-y-scroll h-screen">
-    <!-- Header -->
     <header class="w-full p-4 flex justify-between items-center border-b border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-black/90 backdrop-blur-md fixed top-0 left-0 z-40">
       <h1 class="text-xl font-semibold">Humboldt-Makerspace</h1>
       <nav class="hidden md:flex space-x-6 text-sm">
@@ -47,12 +25,10 @@
         <a href="Schule.html" class="hover:underline">Schule</a>
       </nav>
       <div class="flex items-center space-x-4">
-        <!-- Dark Mode Toggle -->
         <button onclick="document.documentElement.classList.toggle('dark')" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full shadow hover:scale-110 transition">
           <span class="dark:hidden">🌙</span>
           <span class="hidden dark:inline">☀️</span>
         </button>
-        <!-- Burger Menu Icon -->
         <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -61,148 +37,145 @@
       </div>
     </header>
 
-      <!-- Cookie Banner -->
-  <div id="cookie-banner" style="display:none">
-    <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu.</p>
-    <div class="theme-toggle">
-      <label for="theme-select">Farbmodus:</label>
-      <select id="theme-select">
-        <option value="system">System anpassen</option>
-        <option value="light">Hell</option>
-        <option value="dark">Dunkel</option>
-      </select>
-    </div>
-    <div class="actions">
-      <button id="cookie-accept">Akzeptieren</button>
-      <button id="cookie-decline">Ablehnen</button>
-    </div>
-  </div>
-
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden fixed top-20 right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 space-y-4 z-50">
       <a href="Wettbewerbe.html" class="block hover:underline">Wettbewerbe</a>
       <a href="Projekte.html" class="block hover:underline">Unsere Projekte</a>
       <a href="Schule.html" class="block hover:underline">Schule</a>
     </div>
 
-    <!-- Spacer for fixed header -->
     <div class="h-20"></div>
 
-    <!-- Hero Section -->
     <section class="text-center py-48 px-6 parallax snap-start" style="background-image: url('https://via.placeholder.com/1600x900?text=AirSweep+Pro');" data-aos="fade-up">
       <h2 class="text-6xl font-bold mb-6 drop-shadow-lg">Humboldt-Makerspace</h2>
       <p class="text-2xl mb-8 text-white/96 drop-shadow">Die Technik-AG des Alexander-von-Humboldt Gymnasiums</p>
       <a href="#Überuns" class="bg-black text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transition">Wer wir sind</a>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="py-32 px-6 max-w-6xl mx-auto snap-start" data-aos="fade-up">
       <h3 class="text-4xl font-semibold text-center mb-24">Wettbewerbe</h3>
       <div class="grid md:grid-cols-3 gap-16">
-
-               <a href="104.html" target="_blank" rel="noopener noreferrer">
-  <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-    <img src="https://www.avh.berlin/wp-content/uploads/2025/07/Erster-Platz-1024x807.jpg" alt="Smart Sensor" class="mx-auto mb-4">
-    <h4 class="text-2xl font-semibold mb-2">„Wir sind Europameister!“ – Ein Erlebnisbericht von der European RoboCupJunior Championship 2025</h4>
-  </div>
-</a>
-
-
+        <a href="104.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2025/07/Erster-Platz-1024x807.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">„Wir sind Europameister!“ – Ein Erlebnisbericht von der European RoboCupJunior Championship 2025</h4>
+          </div>
+        </a>
         <a href="101.html" target="_blank" rel="noopener noreferrer">
-  <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-    <img src="https://www.avh.berlin/wp-content/uploads/2025/03/Siegerehrung-1024x683.jpg" alt="Smart Sensor" class="mx-auto mb-4">
-    <h4 class="text-2xl font-semibold mb-2">The PowerPuff Penguins auf dem Weg zur Europameisterschaft</h4>
-  </div>
-</a>
-
-      <a href="102.html" target="_blank" rel="noopener noreferrer">
-<div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-  <img src="https://www.avh.berlin/wp-content/uploads/2025/02/Pokale-1024x655.jpg" alt="Smart Sensor" class="mx-auto mb-4">
-  <h4 class="text-2xl font-semibold mb-2">Berliner Meister RoboCupJunior 2025</h4>
-</div>
-</a>
-
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2025/03/Siegerehrung-1024x683.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">The PowerPuff Penguins auf dem Weg zur Europameisterschaft</h4>
+          </div>
+        </a>
+        <a href="102.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2025/02/Pokale-1024x655.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">Berliner Meister RoboCupJunior 2025</h4>
+          </div>
+        </a>
         <a href="001.html" target="_blank" rel="noopener noreferrer">
-  <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-    <img src="https://www.avh.berlin/wp-content/uploads/2024/04/Bild3.jpg" alt="Smart Sensor" class="mx-auto mb-4">
-    <h4 class="text-2xl font-semibold mb-2">VeX iQ Wettbewerb 2024 in Hamburg</h4>
-  </div>
-</a>
-
-        
-      <a href="002" target="_blank" rel="noopener noreferrer">
-  <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-    <img src="https://www.avh.berlin/wp-content/uploads/2024/04/VeX-German_Masters_2024_01-1024x768.jpg" alt="Smart Sensor" class="mx-auto mb-4">
-    <h4 class="text-2xl font-semibold mb-2">1. Platz bei den VeX German Masters 2024 in Hamburg</h4>
-  </div>
-</a>
-
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2024/04/Bild3.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">VeX iQ Wettbewerb 2024 in Hamburg</h4>
+          </div>
+        </a>
+        <a href="002" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2024/04/VeX-German_Masters_2024_01-1024x768.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">1. Platz bei den VeX German Masters 2024 in Hamburg</h4>
+          </div>
+        </a>
         <a href="103.html" target="_blank" rel="noopener noreferrer">
-  <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-    <img src="https://www.avh.berlin/wp-content/uploads/2024/04/RoboCupJunior_2024_02-1024x768.jpg" alt="Smart Sensor" class="mx-auto mb-4">
-    <h4 class="text-2xl font-semibold mb-2">1. Platz beim RoboCupJunior 2024 in Adlershof</h4>
-  </div>
-</a>
-
-         </div>
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2024/04/RoboCupJunior_2024_02-1024x768.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">1. Platz beim RoboCupJunior 2024 in Adlershof</h4>
+          </div>
+        </a>
+      </div>
     </section>
 
-
-   <!-- Projekte Section (gleicher Stil wie Wettbewerbe) -->
-<section class="py-32 px-6 max-w-6xl mx-auto snap-start" data-aos="fade-up">
-  <h3 class="text-4xl font-semibold text-center mb-24">Unsere Projekte</h3>
-  <div class="grid md:grid-cols-3 gap-16">
-    
-    <a href="VEX-V5.html" target="_blank" rel="noopener noreferrer">
-      <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-        <img src="https://www.avh.berlin/wp-content/uploads/2022/02/VEX2022-2048x1536.jpg" alt="VEX-V5" class="mx-auto mb-4">
-        <h4 class="text-2xl font-semibold mb-2">VEX-V5</h4>
+    <section class="py-32 px-6 max-w-6xl mx-auto snap-start" data-aos="fade-up">
+      <h3 class="text-4xl font-semibold text-center mb-24">Unsere Projekte</h3>
+      <div class="grid md:grid-cols-3 gap-16">
+        <a href="VEX-V5.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2022/02/VEX2022-2048x1536.jpg" alt="VEX-V5" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">VEX-V5</h4>
+          </div>
+        </a>
+        <a href="LED-Projekte.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2022/03/HM_LED-2048x1152.jpg" alt="LED-Projekte" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">LED-Projekte</h4>
+          </div>
+        </a>
+        <a href="3D-Druck.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2022/03/HM_3D-Druck-2048x1152.jpg" alt="3D-Druck" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">3D-Druck</h4>
+          </div>
+        </a>
       </div>
-    </a>
-
-    <a href="LED-Projekte.html" target="_blank" rel="noopener noreferrer">
-      <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-        <img src="https://www.avh.berlin/wp-content/uploads/2022/03/HM_LED-2048x1152.jpg" alt="LED-Projekte" class="mx-auto mb-4">
-        <h4 class="text-2xl font-semibold mb-2">LED-Projekte</h4>
+      <div class="mt-16 text-center">
+        <a href="Projekte.html" class="bg-black text-white text-lg font-semibold py-3 px-10 rounded-full hover:bg-gray-800 transition"> Alle Projekte ansehen </a>
       </div>
-    </a>
+    </section>
 
-    <a href="3D-Druck.html" target="_blank" rel="noopener noreferrer">
-      <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
-        <img src="https://www.avh.berlin/wp-content/uploads/2022/03/HM_3D-Druck-2048x1152.jpg" alt="3D-Druck" class="mx-auto mb-4">
-        <h4 class="text-2xl font-semibold mb-2">3D-Druck</h4>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- Button unterhalb der Projekte -->
-  <div class="mt-16 text-center">
-    <a href="Projekte.html" class="bg-black text-white text-lg font-semibold py-3 px-10 rounded-full hover:bg-gray-800 transition">
-      Alle Projekte ansehen
-    </a>
-  </div>
-</section>
-
-
-     
-
-    <!-- Call to Action -->
     <section id="Überuns" class="py-32 px-6 text-center snap-start" data-aos="fade-up">
       <h3 class="text-5xl font-bold mb-4">Über uns</h3>
       <p class="text-xl text-gray-600 dark:text-gray-400 mb-10">Der Humboldt Makerspace ist der Nachfolger der Robotik-AG (FRT Robotik). Für diese ...</p>
       <a href="Überuns.html" class="bg-black text-white text-lg font-semibold py-3 px-10 rounded-full hover:bg-gray-800 transition">mehr lesen</a>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-10 border-t dark:border-gray-700">
       &copy; 2025 Humboldt-Makerspace. Alle Rechte vorbehalten.
     </footer>
 
+    <div id="cookie-banner" class="fixed bottom-0 right-0 m-4 p-4 bg-gray-800 text-white rounded-lg shadow-lg z-50 max-w-sm hidden">
+      <p class="mb-3">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu.</p>
+      <div class="flex space-x-2">
+        <button id="cookie-accept" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg flex-grow">Akzeptieren</button>
+        <button id="cookie-decline" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg flex-grow">Ablehnen</button>
+      </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
+      // Tailwind Config und Theme-Logik
+      tailwind.config = {
+        darkMode: 'class',
+      };
+
+      function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      }
+
+      // Cookie Banner Logik
+      document.addEventListener('DOMContentLoaded', () => {
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptButton = document.getElementById('cookie-accept');
+        const declineButton = document.getElementById('cookie-decline');
+        const cookieConsent = localStorage.getItem('cookieConsent');
+
+        // Das Banner nur anzeigen, wenn der Nutzer noch keine Entscheidung getroffen hat
+        if (!cookieConsent) {
+          cookieBanner.classList.remove('hidden');
+        }
+
+        // Akzeptieren
+        acceptButton.addEventListener('click', () => {
+          localStorage.setItem('cookieConsent', 'accepted');
+          cookieBanner.classList.add('hidden');
+        });
+
+        // Ablehnen
+        declineButton.addEventListener('click', () => {
+          localStorage.setItem('cookieConsent', 'declined');
+          cookieBanner.classList.add('hidden');
+        });
+      });
+
+      // AOS initialisieren
       AOS.init();
     </script>
   </body>
 </html>
-
