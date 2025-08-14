@@ -10,22 +10,6 @@
         darkMode: 'class',
       }
 
-        // Cookie Banner Logik
-    document.addEventListener('DOMContentLoaded', () => {
-      const banner = document.getElementById('cookie-banner');
-      const acceptBtn = document.getElementById('cookie-accept');
-      const declineBtn = document.getElementById('cookie-decline');
-      const themeSelect = document.getElementById('theme-select');
-
-      if (!localStorage.getItem('cookieConsent')) {
-        banner.style.display = 'flex';
-      }
-
-      acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.style.display = 'none';
-      });
-
       declineBtn.addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'declined');
         banner.style.display = 'none';
@@ -37,20 +21,6 @@
         applyTheme(value);
       });
 
-      function applyTheme(pref) {
-        if (pref === 'light') {
-          document.documentElement.style.setProperty('--bg', '#ffffff');
-          document.documentElement.style.setProperty('--text', '#000000');
-          document.documentElement.style.setProperty('--card', '#f2f2f2');
-        } else if (pref === 'dark') {
-          document.documentElement.style.setProperty('--bg', '#0b0b0c');
-          document.documentElement.style.setProperty('--text', '#e7e7ea');
-          document.documentElement.style.setProperty('--card', '#141416');
-        } else {
-          const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          applyTheme(darkMode ? 'dark' : 'light');
-        }
-      }
 
       const savedTheme = localStorage.getItem('themePreference') || 'system';
       themeSelect.value = savedTheme;
@@ -58,74 +28,7 @@
     });
     </script>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
-       :root{
-      --bg: #0b0b0c;
-      --card: #141416;
-      --text: #e7e7ea;
-      --muted: #a3a3ad;
-      --accent: #4ade80;
-      --ring: rgba(255,255,255,.06);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1000px;margin:0 auto;padding:20px}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient(to bottom, rgba(11,11,12,.9), rgba(11,11,12,.5));border-bottom:1px solid var(--ring);z-index:10}
-    .nav{display:flex;align-items:center;gap:10px;justify-content:space-between; padding:12px 20px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .chip{display:inline-flex;align-items:center;padding:6px 12px;border:1px solid var(--ring);border-radius:999px;color:var(--muted);font-size:14px}
-    .links{display:flex;gap:8px;flex-wrap:wrap}
-    .sun{font-size:22px}
-    .hero{display:grid;gap:14px;padding:44px 20px 24px}
-    h1{font-size:clamp(28px,4vw,46px);margin:0;line-height:1.15}
-    h2{font-size:clamp(18px,2.6vw,24px);margin:18px 0 8px}
-    p{margin:8px 0;color:var(--text)}
-    .muted{color:var(--muted)}
-    .grid{display:grid;gap:16px}
-    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .article{padding:10px 0 40px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:12px;border:1px solid var(--ring);border-radius:999px;padding:4px 10px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ring);background:#161617;border-radius:12px;padding:10px 14px}
-    .btn:hover{outline:1px solid var(--ring)}
-    footer{border-top:1px solid var(--ring);padding:28px 20px;color:var(--muted)}
-    .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
-    @media (max-width:850px){.two-col{grid-template-columns:1fr}}
-    .list{display:grid;gap:10px}
-    .list a{display:flex;justify-content:space-between;gap:12px;border:1px solid var(--ring);background:var(--card);border-radius:12px;padding:12px}
-    .list small{color:var(--muted)}
-    .credit{font-size:13px;color:var(--muted)}
-    .source{font-size:14px}
-    .kicker{letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;font-size:12px}
-    /* Cookie Banner */
-    #cookie-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);max-width:500px;width:90%;z-index:1000;display:flex;flex-direction:column;gap:12px}
-    #cookie-banner p{margin:0;color:var(--text);font-size:14px}
-    #cookie-banner .actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    #cookie-banner button{border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:14px}
-    #cookie-accept{background:var(--accent);color:#000}
-    #cookie-decline{background:#333;color:var(--text)}
-    /* Theme toggle */
-    .theme-toggle{margin-top:8px;display:flex;align-items:center;gap:8px}
-    select{background:var(--card);color:var(--text);border:1px solid var(--ring);border-radius:8px;padding:6px 8px}
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-        transition: background-color 0.3s, color 0.3s;
-      }
-      .parallax {
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-      }
+   
     </style>
     <script>
       function toggleMenu() {
