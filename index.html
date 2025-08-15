@@ -54,14 +54,66 @@
     <section id="features" class="py-32 px-6 max-w-6xl mx-auto snap-start" data-aos="fade-up">
       <h3 class="text-4xl font-semibold text-center mb-24">Wettbewerbe</h3>
       <div class="grid md:grid-cols-3 gap-16">
-        <!-- Wettbewerbs-Elemente ... (gekürzt für Übersicht) -->
+        <a href="104.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2025/07/Erster-Platz-1024x807.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">„Wir sind Europameister!“ – Ein Erlebnisbericht von der European RoboCupJunior Championship 2025</h4>
+          </div>
+        </a>
+        <a href="101.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2025/03/Siegerehrung-1024x683.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">The PowerPuff Penguins auf dem Weg zur Europameisterschaft</h4>
+          </div>
+        </a>
+        <a href="102.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2025/02/Pokale-1024x655.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">Berliner Meister RoboCupJunior 2025</h4>
+          </div>
+        </a>
+        <a href="001.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2024/04/Bild3.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">VeX iQ Wettbewerb 2024 in Hamburg</h4>
+          </div>
+        </a>
+        <a href="002" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2024/04/VeX-German_Masters_2024_01-1024x768.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">1. Platz bei den VeX German Masters 2024 in Hamburg</h4>
+          </div>
+        </a>
+        <a href="103.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2024/04/RoboCupJunior_2024_02-1024x768.jpg" alt="Smart Sensor" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">1. Platz beim RoboCupJunior 2024 in Adlershof</h4>
+          </div>
+        </a>
       </div>
     </section>
 
     <section class="py-32 px-6 max-w-6xl mx-auto snap-start" data-aos="fade-up">
       <h3 class="text-4xl font-semibold text-center mb-24">Unsere Projekte</h3>
       <div class="grid md:grid-cols-3 gap-16">
-        <!-- Projekt-Elemente ... (gekürzt für Übersicht) -->
+        <a href="VEX-V5.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2022/02/VEX2022-2048x1536.jpg" alt="VEX-V5" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">VEX-V5</h4>
+          </div>
+        </a>
+        <a href="LED-Projekte.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2022/03/HM_LED-2048x1152.jpg" alt="LED-Projekte" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">LED-Projekte</h4>
+          </div>
+        </a>
+        <a href="3D-Druck.html" target="_blank" rel="noopener noreferrer">
+          <div class="text-center transform transition duration-700 hover:scale-105 cursor-pointer">
+            <img src="https://www.avh.berlin/wp-content/uploads/2022/03/HM_3D-Druck-2048x1152.jpg" alt="3D-Druck" class="mx-auto mb-4" />
+            <h4 class="text-2xl font-semibold mb-2">3D-Druck</h4>
+          </div>
+        </a>
       </div>
       <div class="mt-16 text-center">
         <a href="Projekte.html" class="bg-black text-white text-lg font-semibold py-3 px-10 rounded-full hover:bg-gray-800 transition"> Alle Projekte ansehen </a>
@@ -97,22 +149,27 @@
         document.getElementById('mobileMenu').classList.toggle('hidden');
       }
 
-      // Cookie Banner Logik (immer anzeigen)
+      // Cookie Banner Logik
       document.addEventListener('DOMContentLoaded', () => {
         const cookieBanner = document.getElementById('cookie-banner');
         const acceptButton = document.getElementById('cookie-accept');
         const declineButton = document.getElementById('cookie-decline');
+        const cookieConsent = localStorage.getItem('cookieConsent');
 
-        // Banner IMMER anzeigen
-        cookieBanner.classList.remove('hidden');
+        // Das Banner nur anzeigen, wenn der Nutzer noch keine Entscheidung getroffen hat
+        if (!cookieConsent) {
+          cookieBanner.classList.remove('hidden');
+        }
 
         // Akzeptieren
         acceptButton.addEventListener('click', () => {
+          localStorage.setItem('cookieConsent', 'accepted');
           cookieBanner.classList.add('hidden');
         });
 
         // Ablehnen
         declineButton.addEventListener('click', () => {
+          localStorage.setItem('cookieConsent', 'declined');
           cookieBanner.classList.add('hidden');
         });
       });
