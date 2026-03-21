@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Bericht</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+  <style>
+    body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #0366d6;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Content */
+.content {
+    margin-left: 270px;
+    padding: 40px;
+    max-width: 800px;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Info Box */
+.info-box {
+    background: #e7f3ff;
+    border-left: 4px solid #0366d6;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Image */
+.image-container {
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.caption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+  </style>
+
+<div class="sidebar">
+    <h2>Bericht</h2>
+    <ul>
+        <li><a href="#einleitung">Einleitung</a></li>
+        <li><a href="#abschnitt1">Abschnitt 1</a></li>
+        <li><a href="#bilder">Bilder</a></li>
+        <li><a href="#fazit">Fazit</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1 id="einleitung">Einleitung</h1>
+    <p>Hier steht deine Einleitung. Beschreibe dein Thema kurz und präzise.</p>
+
+    <h2 id="abschnitt1">Abschnitt 1</h2>
+    <p>Hier kannst du deinen Hauptinhalt schreiben. Der Stil ist bewusst klar und gut lesbar.</p>
+
+    <div class="info-box">
+        💡 Tipp: Du kannst wichtige Hinweise so hervorheben.
+    </div>
+
+    <h2 id="bilder">Bilder</h2>
+    <p>Hier ein Beispiel für ein eingefügtes Bild:</p>
+
+    <div class="image-container">
+        <img src="bild.jpg" alt="Beschreibung des Bildes">
+        <p class="caption">Abb. 1: Beschreibung des Bildes</p>
+    </div>
+
+    <h2 id="fazit">Fazit</h2>
+    <p>Zusammenfassung deiner Ergebnisse.</p>
+</div>
+
+</body>
+</html>
