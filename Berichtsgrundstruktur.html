@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bericht – Humboldt-Makerspace</title>
   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="config.js"></script>
   <script>
+     // Footer-Text aus config.js laden
+     document.getElementById("footer-text").textContent = FOOTER_TEXT; 
     tailwind.config = { darkMode: 'class' }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -197,8 +200,8 @@
        FOOTER (identisch zur Grundstruktur)
   ════════════════════════════════════════════ -->
   <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-10 border-t dark:border-gray-700">
-    &copy; 2025 Humboldt-Makerspace. Alle Rechte vorbehalten.
-  </footer>
+      <p id="footer-text"></p>
+    </footer>
 
 </body>
 </html>

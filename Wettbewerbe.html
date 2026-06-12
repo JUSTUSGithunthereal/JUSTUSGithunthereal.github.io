@@ -8,6 +8,10 @@
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
+  <script src="config.js">
+     // Footer-Text aus config.js laden
+     document.getElementById("footer-text").textContent = FOOTER_TEXT; 
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -18,8 +22,9 @@
   <script>
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('hidden');
-    }
+    } 
   </script>
+  <script src="config.js"></script>
 </head>
   <link rel="icon" type="image/png" href="pinguin_weiss_2k-768x892.png">
 <body class="bg-white text-gray-900 dark:bg-black dark:text-white">
@@ -112,8 +117,8 @@
 
   <!-- Footer -->
   <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-10 border-t dark:border-gray-700">
-    &copy; 2025 Humboldt-Makerspace. Alle Rechte vorbehalten.
-  </footer>
+      <p id="footer-text"></p>
+    </footer>
 
 </body>
 </html>
