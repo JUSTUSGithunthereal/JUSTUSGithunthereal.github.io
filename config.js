@@ -1,0 +1,1 @@
+const FOOTER_TEXT = "© 2026 Humboldt-Makerspace. Alle Rechte vorbehalten.";

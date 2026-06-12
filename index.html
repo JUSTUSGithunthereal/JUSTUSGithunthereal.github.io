@@ -137,7 +137,7 @@
     </section>
 
     <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-10 border-t dark:border-gray-700">
-      &copy; 2025 Humboldt-Makerspace. Alle Rechte vorbehalten.
+      <p id="footer-text"></p>
     </footer>
 
     <div id="cookie-banner" class="fixed bottom-0 right-0 m-4 p-4 bg-gray-800 text-white rounded-lg shadow-lg z-50 max-w-sm hidden">
@@ -149,7 +149,11 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="config.js"></script>
     <script>
+  // Footer-Text aus config.js laden
+     document.getElementById("footer-text").textContent = FOOTER_TEXT; 
+     
   // Tailwind Config und Theme-Logik
   tailwind.config = {
     darkMode: 'class',
